@@ -32,15 +32,51 @@ class LinkedList:
         return None
 
     def find_all(self, val):
-        return [] # здесь будет ваш код
+        node=self.head
+        list=[]
+        while node is not None:
+            if node.value==val:
+                list.append(node)
+            node=node.next
+        return list
 
     def delete(self, val, all=False):
-        pass # здесь будет ваш код
+        target=self.find(val)
+        if target is None:
+           pass
+        else:
+            if all is False:
+                node=self.head
+                prev=None
+                while node is not None:
+                    if node.value is val:
+                        if prev is None:
+                            self.head=self.head.next
+                            pass
+                        else:
+                            prev.next=node.next
+                            pass
+                    prev=node
+                    node=node.next
+            else:
+               temp=self.head
+               prev=None
+               while temp is not None:
+                   if  temp.value is val:
+                       if prev is None:
+                           self.head=self.head.next                          
+                       else:
+                           prev.next= temp.next                         
+                   prev= temp
+                   temp= temp.next
+        pass
+                
+
 
     def clean(self):
         self.head=None
         self.tail=None
-        pass # здесь будет ваш код
+        pass 
 
     def len(self):
         count=0;
@@ -51,5 +87,16 @@ class LinkedList:
         return count 
 
     def insert(self, afterNode, newNode):
-        pass # здесь будет ваш код
+        nAfter=self.find(afterNode.value)
+        if nAfter is None:
+            pass
+        else: 
+            if afterNode is self.tail:
+                afterNode.next=newNode
+                pass
+            else: 
+                newNode.next=afterNode.next
+                afterNode.next=newNode
+                pass
+        pass 
 
