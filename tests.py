@@ -149,7 +149,7 @@ class Test_tests(unittest.TestCase):
         list.delete(4)
         self.assertEqual(4,list.len())
 
-    def test_delete_node_single_from_tail(self):
+    def test_delete_node_single_from_tail_false(self):
         list=LinkedList()
         n1=Node(1)
         n2=Node(2)
@@ -208,7 +208,60 @@ class Test_tests(unittest.TestCase):
         list.add_in_tail(n5)
         list.delete(1,True)
         self.assertEqual(2,list.len())
-        list.print_all_nodes()
+
+    def test_delete_single_element(self):
+        list=LinkedList()
+        n1=Node(1)
+        list.add_in_tail(n1)
+        list.delete(1)
+        self.assertEqual(0,list.len())
+
+    def test_delete_single_element_true(self):
+        list=LinkedList()
+        n1=Node(1)
+        list.add_in_tail(n1)
+        list.delete(1,True)
+        self.assertEqual(0,list.len())
+
+    def test_delete_single_at_tail_true(self):
+        list=LinkedList()
+        n1=Node(1)
+        n2=Node(2)
+        n3=Node(3)
+        n4=Node(4)
+        n5=Node(5)
+        list.add_in_tail(n1)
+        list.add_in_tail(n2)
+        list.add_in_tail(n3)
+        list.add_in_tail(n4)
+        list.add_in_tail(n5)
+        list.delete(5,True)
+        self.assertEqual(4,list.len())
+
+    def test_delete_single_at_middle_true(self):
+        list=LinkedList()
+        n1=Node(1)
+        n2=Node(2)
+        n3=Node(3)
+        n4=Node(4)
+        n5=Node(5)
+        list.add_in_tail(n1)
+        list.add_in_tail(n2)
+        list.add_in_tail(n3)
+        list.add_in_tail(n4)
+        list.add_in_tail(n5)
+        list.delete(3,True)
+        self.assertEqual(4,list.len())
+
+    def test_delete_empty_list_true(self):
+        list=LinkedList()
+        list.delete(3,True)
+        self.assertEqual(0,list.len())
+
+    def test_delete_empty_list_false(self):
+        list=LinkedList()
+        list.delete(3)
+        self.assertEqual(0,list.len())
 
 if __name__ == '__main__':
     unittest.main()
