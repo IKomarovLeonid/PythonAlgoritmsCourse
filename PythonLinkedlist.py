@@ -60,14 +60,9 @@ class LinkedList:
                     node=node.next
             else:
                temp=self.head
-               prev=None
                while temp is not None:
                    if  temp.value is val:
-                       if prev is None:
-                           self.head=self.head.next                          
-                       else:
-                           prev.next= temp.next                         
-                   prev= temp
+                       self.delete(temp.value)
                    temp= temp.next
         pass
                 
