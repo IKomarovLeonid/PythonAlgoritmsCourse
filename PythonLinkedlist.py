@@ -38,10 +38,18 @@ class LinkedList:
         pass # здесь будет ваш код
 
     def clean(self):
+        self.head=None
+        self.tail=None
         pass # здесь будет ваш код
 
     def len(self):
-        return 0 # здесь будет ваш код
+        count=0;
+        node=self.head
+        while node is not None:
+            count=count+1
+            node=node.next
+        return count 
 
     def insert(self, afterNode, newNode):
         pass # здесь будет ваш код
+
