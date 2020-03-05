@@ -278,6 +278,54 @@ class Test_tests(unittest.TestCase):
         list.delete(1,True)
         self.assertEqual(0,list.len())
 
+    def test_delete_almost_nodes_by_delete_true(self):
+        list=LinkedList()
+        n1=Node(1)
+        n2=Node(1)
+        n3=Node(1)
+        n4=Node(1)
+        n5=Node(2)
+        list.add_in_tail(n1)
+        list.add_in_tail(n2)
+        list.add_in_tail(n3)
+        list.add_in_tail(n4)
+        list.add_in_tail(n5)
+        list.delete(1,True)
+        self.assertEqual(1,list.len())
+
+    def test_delete_almost_in_middle(self):
+        list=LinkedList()
+        n1=Node(2)
+        n2=Node(2)
+        n3=Node(1)
+        n4=Node(2)
+        n5=Node(2)
+        list.add_in_tail(n1)
+        list.add_in_tail(n2)
+        list.add_in_tail(n3)
+        list.add_in_tail(n4)
+        list.add_in_tail(n5)
+        list.delete(2,True)
+        self.assertEqual(1,list.len())
+
+    def test_delete_almost_nodes_from_tail_true(self):
+        list=LinkedList()
+        n1=Node(1)
+        n2=Node(2)
+        n3=Node(2)
+        n4=Node(2)
+        n5=Node(2)
+        list.add_in_tail(n1)
+        list.add_in_tail(n2)
+        list.add_in_tail(n3)
+        list.add_in_tail(n4)
+        list.add_in_tail(n5)
+        list.delete(2,True)
+        list.print_all_nodes()
+        self.assertEqual(1,list.len())
+     
+
+
 if __name__ == '__main__':
     unittest.main()
 
