@@ -323,6 +323,21 @@ class Test_tests(unittest.TestCase):
         list.delete(2,True)
         list.print_all_nodes()
         self.assertEqual(1,list.len())
+
+    def test_insert_into_empty_list(self):
+         list=LinkedList()
+         n1=Node(10)
+         list.insert(None,n1)
+         self.assertEqual(1,list.len())
+
+    def test_insert_None(self):
+        list=LinkedList()
+        n1=Node(10)
+        list.add_in_tail(n1)
+        list.insert(n1,None)
+        self.assertEqual(1,list.len())
+
+
      
 
 

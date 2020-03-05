@@ -74,7 +74,7 @@ class LinkedList:
     def clean(self):
         self.head=None
         self.tail=None
-        pass 
+        return
 
     def len(self):
         count=0;
@@ -85,16 +85,19 @@ class LinkedList:
         return count 
 
     def insert(self, afterNode, newNode):
+        if afterNode is None:
+            self.head=newNode
+            self.tail=newNode
+            return
+        if newNode is None: return
         nAfter=self.find(afterNode.value)
         if nAfter is None:
-            pass
+            return
         else: 
             if afterNode is self.tail:
                 afterNode.next=newNode
-                pass
             else: 
                 newNode.next=afterNode.next
                 afterNode.next=newNode
-                pass
-        pass 
+        return
 
