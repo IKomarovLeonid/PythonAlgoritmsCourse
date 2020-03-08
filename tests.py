@@ -337,6 +337,42 @@ class Test_tests(unittest.TestCase):
         list.insert(n1,None)
         self.assertEqual(1,list.len())
 
+    def test_insert_in_tail(self):
+        list=LinkedList()
+        n1=Node(10)
+        n2=Node(11)
+        n3=Node(12)
+        n4=Node(-1)
+        list.add_in_tail(n1)
+        list.add_in_tail(n2)
+        list.add_in_tail(n3)
+        list.insert(n3,n4)
+        self.assertEqual(4,list.len())
+
+    def test_insert_in_middle(self):
+        list=LinkedList()
+        n1=Node(10)
+        n2=Node(11)
+        n3=Node(12)
+        n4=Node(-1)
+        list.add_in_tail(n1)
+        list.add_in_tail(n2)
+        list.add_in_tail(n3)
+        list.insert(n1,n4)
+        self.assertEqual(4,list.len())
+
+    def test_insert_after_None(self):
+        list=LinkedList()
+        n1=Node(10)
+        n2=Node(11)
+        n3=Node(12)
+        n4=Node(-1)
+        list.add_in_tail(n1)
+        list.add_in_tail(n2)
+        list.add_in_tail(n3)
+        list.insert(None,n4)
+        self.assertEqual(3,list.len())
+        list.print_all_nodes()
 
      
 
