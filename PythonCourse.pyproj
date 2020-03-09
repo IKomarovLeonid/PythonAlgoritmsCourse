@@ -5,7 +5,7 @@
     <ProjectGuid>d4e2ac5d-8172-4599-af89-2b687678e57a</ProjectGuid>
     <ProjectHome>
     </ProjectHome>
-    <StartupFile>PythonLinkedlist.py</StartupFile>
+    <StartupFile>Linkedlist.py</StartupFile>
     <SearchPath>
     </SearchPath>
     <WorkingDirectory>.</WorkingDirectory>
@@ -22,7 +22,13 @@
     <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="PythonLinkedlist.py" />
+    <Compile Include="Linkedlist.py" />
+    <Compile Include="LinkedList.Tests.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="LinkedListTwoWay.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="tests.py">
       <SubType>Code</SubType>
     </Compile>
