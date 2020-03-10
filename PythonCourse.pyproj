@@ -29,7 +29,7 @@
     <Compile Include="LinkedListTwoWay.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="tests.py">
+    <Compile Include="testsList2.py">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
